@@ -1,1 +1,1 @@
-# Computer-graphics-ex-1-2
+# Computer-graphics-ex-2
