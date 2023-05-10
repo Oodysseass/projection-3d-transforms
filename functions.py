@@ -3,6 +3,10 @@ import math
 
 # calculates rotation matrix around an axis
 def rotmat(theta, u):
+    # make sure its unit vector
+    u = u / np.linalg.norm(u)
+
+    # rotation matrix
     R = np.arr([[(1 - math.cos(theta)) * (u[0] ** 2) + math.cos(theta),
                 (1 - math.cos(theta)) * u[0] * u[1] - math.sin(theta) * u[2],
                 (1 - math.cos(theta)) * u[0] * u[2] + math.sin(theta) * u[1]],
@@ -35,6 +39,8 @@ def ChangeCoordinateSystem(c_p, R, c_0):
     # L^(-1)
     R_inv = np.transpose(R)
 
+    # new coordinates
     d_p = np.dot(R_inv, c_p - c_0)
 
     return d_p
+
