@@ -227,7 +227,7 @@ def Gourauds(canvas, vertices, vcolors):
 
 
 # paints object described by args
-def render(verts2d, faces, vcolors, depth, shade_t, M, N):
+def render(verts2d, faces, vcolors, depth, M, N):
     # calculate depth of each triagle
     triangles_depth = np.array(np.mean(depth[faces], axis = 1))
 
@@ -254,7 +254,7 @@ def RenderObject(p3d, faces, vcolors, H, W, Rows, Columns, f, cv, K, cup):
     n2d = n2d.T
 
     # paint object 
-    I = render(n2d, faces, vcolors, depth, 'gouraud', Rows, Columns)
+    I = render(n2d, faces, vcolors, depth, Rows, Columns)
 
     return I
 
