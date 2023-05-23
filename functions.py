@@ -245,9 +245,9 @@ def render(verts2d, faces, vcolors, depth, M, N):
 
 
 # renders object described by args
-def RenderObject(p3d, faces, vcolors, H, W, Rows, Columns, f, cv, K, cup):
+def RenderObject(p3d, faces, vcolors, H, W, Rows, Columns, f, cv, cK, cup):
     # project points
-    p2d, depth = CameraLookingAt(f, cv, K - cv, cup, p3d)
+    p2d, depth = CameraLookingAt(f, cv, cK - cv, cup, p3d)
     # get pixel coords
     n2d = rasterize(p2d, Rows, Columns, H, W)
 
